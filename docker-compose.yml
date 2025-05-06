@@ -1,6 +1,8 @@
 services:
   victim:
-    image: httpd:2.4.63
+    build:
+      context: ./apache-config
+      dockerfile: Dockerfile
     container_name: victim
     cap_add:
       - NET_ADMIN
