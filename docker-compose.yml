@@ -12,8 +12,8 @@ services:
     # memswap_limit: 500m
     volumes:
       - ./apache-config/httpd-2.4.63.conf:/usr/local/apache2/conf/httpd.conf
-    environment:
-      - APACHE_LOG_DIR=/var/log/apache2
+      - ./apache-config/index.html:/usr/local/apache2/htdocs/index.html
+      - ./dataset/access.log:/var/log/apache2/access.log
     ports:
       - "8080:80"
     # networks:
@@ -75,11 +75,11 @@ services:
 # volumes:
 #   prometheus_data:
 
-networks:
-  ddos_network:
-    driver: bridge
-    name: ddos_network
-    ipam:
-      driver: default
-    internal: false
+# networks:
+#   ddos_network:
+#     driver: bridge
+#     name: ddos_network
+#     ipam:
+#       driver: default
+#     internal: false
 
