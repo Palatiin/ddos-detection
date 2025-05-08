@@ -1,0 +1,3 @@
+[submodule "dataset/scripts/slowloris"]
+	path = dataset/scripts/slowloris
+	url = https://github.com/Palatiin/slowloris.git
