@@ -1,0 +1,3 @@
+172.18.0.1|43604|-|-|1746711571929|GET|/index.html||HTTP/1.1|200|100396|-|Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0|373|100684|101057|+|0|1933|-
+172.18.0.1|43604|-|-|1746711574875|GET|/index.html||HTTP/1.1|304|-|-|Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0|462|248|710|+|2|628|-
+172.18.0.1|43604|-|-|1746711576308|GET|/index.html||HTTP/1.1|304|-|-|Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0|462|248|710|+|3|646|-

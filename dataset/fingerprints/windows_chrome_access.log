@@ -1,0 +1,3 @@
+172.18.0.1|35726|-|-|1746547265771|GET|/index.html||HTTP/1.1|200|100396|-|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|460|100684|101144|+|0|1706|-
+172.18.0.1|35726|-|-|1746547269642|GET|/index.html||HTTP/1.1|304|-|-|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|549|248|797|+|2|741|-
+172.18.0.1|35726|-|-|1746547270903|GET|/index.html||HTTP/1.1|304|-|-|Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|549|248|797|+|3|627|-
