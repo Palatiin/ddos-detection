@@ -12,7 +12,7 @@ services:
     # memswap_limit: 500m
     volumes:
       - ./apache-config/httpd-2.4.63.conf:/usr/local/apache2/conf/httpd.conf
-      - ./apache-config/index.html:/usr/local/apache2/htdocs/index.html
+      - ./apache-config/htdocs:/usr/local/apache2/htdocs
       - ./dataset/access.log:/var/log/apache2/access.log
     ports:
       - "8080:80"
