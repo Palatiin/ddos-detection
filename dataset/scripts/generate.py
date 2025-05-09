@@ -25,5 +25,6 @@ if __name__ == "__main__":
             
         for thread in threads:
             thread.start()
+            time.sleep(random.random() * 2 + 1)
         
-        time.sleep(60)
+        time.sleep(20)

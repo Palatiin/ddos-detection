@@ -44,7 +44,7 @@ class TrafficGenerator:
         ip_address = IPAddress.get_benign_ip_address()
         self.log.info(f"Selected IP address and profile: {ip_address}, {profile_name}")
         headers["X-Forwarded-For"] = ip_address
-        headers["X-Label"] = 0  # 0 == benign, 1 == malicious
+        headers["X-Label"] = "0"  # 0 == benign, 1 == malicious
 
         # Simulate user browsing an e-shop products
         session = requests.Session()
@@ -52,8 +52,11 @@ class TrafficGenerator:
 
         for i in range(random.randint(1, 4)):
             # Load product list
-            session.get(f"{self.base_url}/index.html?page={random.randint(1, 50)}")
+            product_list_url = f"{self.base_url}/index.html?page={random.randint(1, 50)}"
+            session.get(product_list_url)
             self.view_product_list_page_action(i)
+
+            session.headers["Referer"] = product_list_url
 
             # View X items from the current product list
             for j in range(random.randint(0, 6)):
