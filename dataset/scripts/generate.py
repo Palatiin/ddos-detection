@@ -11,9 +11,9 @@ BASE_URL = "http://localhost:8080"
 
 if __name__ == "__main__":
     while 1:
-        # Create 10-20 threads (users) per minute, each running TrafficGenerator
+        # Create 30-50 threads (users) per minute, each running TrafficGenerator
         threads = []
-        for i in range(random.randint(10, 20)):
+        for i in range(random.randint(30, 50)):
             # Create a unique logger for each thread with thread ID
             thread_id = ''.join(random.choices(string.ascii_letters + string.digits, k=6))
             logger = structlog.get_logger().bind(tid=thread_id)
@@ -25,6 +25,6 @@ if __name__ == "__main__":
             
         for thread in threads:
             thread.start()
-            time.sleep(random.random() * 2 + 1)
+            time.sleep(random.random() + 1)
         
         time.sleep(20)
