@@ -4,6 +4,3 @@
 [submodule "dataset/scripts/hulk"]
 	path = dataset/scripts/hulk
 	url = https://github.com/Palatiin/hulk.git
-[submodule "dataset/scripts/GoldenEye"]
-	path = dataset/scripts/GoldenEye
-	url = https://github.com/Palatiin/GoldenEye.git
