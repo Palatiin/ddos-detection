@@ -1,0 +1,5 @@
+test0_slowloris_access.log filter=lfs diff=lfs merge=lfs -text
+access.log filter=lfs diff=lfs merge=lfs -text
+benign_access.log filter=lfs diff=lfs merge=lfs -text
+test0_access.log filter=lfs diff=lfs merge=lfs -text
+test0_hulk_access.log filter=lfs diff=lfs merge=lfs -text
