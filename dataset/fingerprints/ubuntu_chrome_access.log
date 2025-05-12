@@ -1,0 +1,6 @@
+172.18.0.1|47510|-|-|1746546173632|GET|/favicon.ico||HTTP/1.1|404|196|http://localhost:8080/|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|578|411|989|+|0|307|-
+172.18.0.1|50298|-|-|1746546212440|GET|/index.html||HTTP/1.1|200|100396|-|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|652|100684|101336|+|0|2173|-
+172.18.0.1|-|-|-|1746546225214|-|-||HTTP/1.0|408|-|-|-|0|0|0|-|0|19|-
+172.18.0.1|37512|-|-|1746546229725|GET|/index.html||HTTP/1.1|304|-|-|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|766|249|1015|+|0|529|-
+172.18.0.1|37512|-|-|1746546233006|GET|/index.html||HTTP/1.1|304|-|-|Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|767|248|1015|+|1|595|-
+172.18.0.1|-|-|-|1746546243646|-|-||HTTP/1.0|408|-|-|-|0|0|0|-|0|19|-

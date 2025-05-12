@@ -1,0 +1,3 @@
+172.18.0.1|54116|-|-|1746548885800|GET|/index.html||HTTP/1.1|200|100396|-|Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|448|100684|101132|+|0|2173|-
+172.18.0.1|54116|-|-|1746548887167|GET|/index.html||HTTP/1.1|304|-|-|Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|563|248|811|+|2|729|-
+172.18.0.1|54116|-|-|1746548888706|GET|/index.html||HTTP/1.1|304|-|-|Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36|563|248|811|+|3|699|-

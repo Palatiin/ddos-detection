@@ -1,83 +1,85 @@
 services:
   victim:
-    image: httpd:2.2.34
+    build:
+      context: ./apache-config
+      dockerfile: Dockerfile
     container_name: victim
     cap_add:
       - NET_ADMIN
-    cpu_period: 100000
-    cpu_quota: 100000
-    mem_limit: 500m
-    memswap_limit: 500m
+    # cpu_period: 100000
+    # cpu_quota: 100000
+    # mem_limit: 500m
+    # memswap_limit: 500m
     volumes:
-      - ./apache-config/httpd-2.2.34.conf:/usr/local/apache2/conf/httpd.conf
-    environment:
-      - APACHE_LOG_DIR=/var/log/apache2
+      - ./apache-config/httpd-2.4.63.conf:/usr/local/apache2/conf/httpd.conf
+      - ./apache-config/htdocs:/usr/local/apache2/htdocs
+      - ./dataset/access.log:/var/log/apache2/access.log
     ports:
       - "8080:80"
-    networks:
-      - ddos_network
+    # networks:
+    #   - ddos_network
     restart: always
 
-  cadvisor:
-    image: zcube/cadvisor:latest
-    container_name: cadvisor
-    networks:
-      - ddos_network
-    ports:
-      - 7070:8080
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /dev/disk/:/dev/disk:ro
+#   cadvisor:
+#     image: zcube/cadvisor:latest
+#     container_name: cadvisor
+#     networks:
+#       - ddos_network
+#     ports:
+#       - 7070:8080
+#     volumes:
+#       - /:/rootfs:ro
+#       - /var/run:/var/run:rw
+#       - /sys:/sys:ro
+#       - /dev/disk/:/dev/disk:ro
 
-  apache-exporter:
-    image: lusotycoon/apache-exporter
-    container_name: apache-exporter
-    command: --scrape_uri="http://victim/server-status?auto"
-    ports:
-      - "9117:9117"
-    networks:
-      - ddos_network
+#   apache-exporter:
+#     image: lusotycoon/apache-exporter
+#     container_name: apache-exporter
+#     command: --scrape_uri="http://victim/server-status?auto"
+#     ports:
+#       - "9117:9117"
+#     networks:
+#       - ddos_network
 
-  prometheus:
-    image: prom/prometheus:v2.42.0
-    container_name: prometheus
-    volumes:
-      - ./prometheus:/etc/prometheus
-      - prometheus_data:/prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-    ports:
-      - "9090:9090"
-    networks:
-      - ddos_network
-    depends_on:
-      - victim
-      - apache-exporter
-      - cadvisor
+#   prometheus:
+#     image: prom/prometheus:v2.42.0
+#     container_name: prometheus
+#     volumes:
+#       - ./prometheus:/etc/prometheus
+#       - prometheus_data:/prometheus
+#     command:
+#       - '--config.file=/etc/prometheus/prometheus.yml'
+#       - '--storage.tsdb.path=/prometheus'
+#     ports:
+#       - "9090:9090"
+#     networks:
+#       - ddos_network
+#     depends_on:
+#       - victim
+#       - apache-exporter
+#       - cadvisor
 
-  grafana:
-    image: grafana/grafana:9.5.2
-    container_name: grafana
-    volumes:
-      - ./grafana_provisioning:/etc/grafana/provisioning
-    ports:
-      - "3000:3000"
-    networks:
-      - ddos_network
-    depends_on:
-      - prometheus
+#   grafana:
+#     image: grafana/grafana:9.5.2
+#     container_name: grafana
+#     volumes:
+#       - ./grafana_provisioning:/etc/grafana/provisioning
+#     ports:
+#       - "3000:3000"
+#     networks:
+#       - ddos_network
+#     depends_on:
+#       - prometheus
 
-volumes:
-  prometheus_data:
+# volumes:
+#   prometheus_data:
 
-networks:
-  ddos_network:
-    driver: bridge
-    name: ddos_network
-    ipam:
-      driver: default
-    internal: false
+# networks:
+#   ddos_network:
+#     driver: bridge
+#     name: ddos_network
+#     ipam:
+#       driver: default
+#     internal: false
 
