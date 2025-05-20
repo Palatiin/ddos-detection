@@ -4,8 +4,6 @@ services:
       context: ./apache-config
       dockerfile: Dockerfile
     container_name: victim
-    cap_add:
-      - NET_ADMIN
     volumes:
       - ./apache-config/httpd-2.4.63.conf:/usr/local/apache2/conf/httpd.conf
       - ./apache-config/htdocs:/usr/local/apache2/htdocs
